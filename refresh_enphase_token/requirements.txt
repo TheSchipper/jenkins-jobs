@@ -1,0 +1,2 @@
+enphase-home-api-client==0.0.1
+hcp-vault-secrets-manager==0.0.1

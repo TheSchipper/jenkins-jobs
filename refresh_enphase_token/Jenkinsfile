@@ -1,0 +1,34 @@
+pipeline {
+    agent {label "schipper"}
+
+    environment {
+        HCP_CLIENT_ID = credentials('hcp-client-id')
+        HCP_CLIENT_SECRET = credentials('hcp-client-secret')
+        HCP_ORGANIZATION_ID = credentials('hcp-organization-id')
+        HCP_PROJECT_NAME = "Enphase"
+        HCP_PROJECT_ID = credentials('hcp-project-id')
+        HCP_ACCESS_TOKEN = sh(returnStdout: true, script: 'curl -H "Content-Type:application/json" -d \'{"audience": "https://api.hashicorp.cloud", "grant_type": "client_credentials", "client_id": "\'$HCP_CLIENT_ID\'", "client_secret": "\'$HCP_CLIENT_SECRET\'"}\' https://auth.hashicorp.com/oauth/token | jq -r .access_token')
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Clone value Client'
+                git branch: 'new-jobs', url: 'https://github.com/TheSchipper/jenkins-jobs.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo "Build Environment"
+                echo "$HCP_ACCESS_TOKEN"
+                sh 'docker build -t enphase-refresh-token .'
+            }
+        }
+        stage('Refresh') {
+            steps {
+                echo "Run Container; refereshing token"
+                sh 'docker run -e HCP_ACCESS_TOKEN=$HCP_ACCESS_TOKEN enphase-refresh-token'
+            }
+        }
+    }
+}
