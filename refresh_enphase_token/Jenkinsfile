@@ -27,7 +27,15 @@ pipeline {
         stage('Refresh') {
             steps {
                 echo "Run Container; refereshing token"
-                sh 'docker run -e HCP_ACCESS_TOKEN=$HCP_ACCESS_TOKEN enphase-refresh-token'
+                sh """
+                   docker run -e HCP_ACCESS_TOKEN=$HCP_ACCESS_TOKEN \
+                              -e HCP_CLIENT_ID=$HCP_CLIENT_ID \
+                              -e HCP_CLIENT_SECRET=$HCP_CLIENT_SECRET \
+                              -e HCP_ORGANIZATION_ID=$HCP_ORGANIZATION_ID \
+                              -e HCP_PROJECT_NAME=$HCP_PROJECT_NAME \
+                              -e HCP_PROJECT_ID=$HCP_PROJECT_ID \
+                              enphase-refresh-token
+                   """
             }
         }
     }
