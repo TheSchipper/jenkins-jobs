@@ -1,0 +1,5 @@
+{"level": "INFO", "message": "This is an info message", "timestamp": "2024-02-01T19:35:21.925006+00:00", "logger": "__main__", "module": "test_loggers", "function": "main", "line": 80, "thread_name": "MainThread"}
+{"level": "DEBUG", "message": "This is a debug message", "timestamp": "2024-02-01T19:35:21.925006+00:00", "logger": "__main__", "module": "test_loggers", "function": "main", "line": 81, "thread_name": "MainThread"}
+{"level": "WARNING", "message": "This is a warning message", "timestamp": "2024-02-01T19:35:21.925006+00:00", "logger": "__main__", "module": "test_loggers", "function": "main", "line": 82, "thread_name": "MainThread"}
+{"level": "ERROR", "message": "This is an error message", "timestamp": "2024-02-01T19:35:21.925006+00:00", "logger": "__main__", "module": "test_loggers", "function": "main", "line": 83, "thread_name": "MainThread"}
+{"level": "CRITICAL", "message": "This is a critical message", "timestamp": "2024-02-01T19:35:21.925006+00:00", "logger": "__main__", "module": "test_loggers", "function": "main", "line": 84, "thread_name": "MainThread"}
