@@ -1,0 +1,10 @@
+2024-02-08T20:59:23-0500 - __main__ - INFO - This is an info message
+2024-02-08T20:59:23-0500 - __main__ - DEBUG - This is a debug message
+2024-02-08T20:59:23-0500 - __main__ - WARNING - This is a warning message
+2024-02-08T20:59:23-0500 - __main__ - ERROR - This is an error message
+2024-02-08T20:59:23-0500 - __main__ - CRITICAL - This is a critical message
+2024-02-08T21:01:06-0500 - __main__ - INFO - This is an info message
+2024-02-08T21:01:06-0500 - __main__ - DEBUG - This is a debug message
+2024-02-08T21:01:06-0500 - __main__ - WARNING - This is a warning message
+2024-02-08T21:01:06-0500 - __main__ - ERROR - This is an error message
+2024-02-08T21:01:06-0500 - __main__ - CRITICAL - This is a critical message

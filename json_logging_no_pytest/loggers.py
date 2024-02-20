@@ -60,7 +60,7 @@ logging_config = {
         },
         "queue_handler": {
             "class": "logging.handlers.QueueHandler",
-            "handlers": ["stdout", "stderr", "json_file", "log_file"],
+            "handlers": ["stdout", "json_file", "log_file"],
             "respect_handler_level": True,
         }
     },
