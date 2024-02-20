@@ -5,7 +5,7 @@ import logging
 from typing import override
 
 
-class MyJsonFormatter(logging.Formatter):
+class JsonFormatter(logging.Formatter):
     def __init__(self, fmt_keys=None):
         super().__init__()
         self.fmt_keys = fmt_keys if fmt_keys is not None else {}

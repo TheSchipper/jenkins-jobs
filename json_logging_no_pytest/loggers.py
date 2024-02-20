@@ -17,7 +17,7 @@ logging_config = {
             "datefmt": "%Y-%m-%dT%H:%M:%S%z",
         },
         "json": {
-            "()": "resources.jsonLogFormatter.MyJsonFormatter",
+            "()": "resources.jsonLogFormatter.JsonFormatter",
             "fmt_keys": {
                 "level": "levelname",
                 "message": "message",
